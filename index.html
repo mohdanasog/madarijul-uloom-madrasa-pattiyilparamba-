@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MADARIJUL ULOOM MADRASA - Pattiyil Paramba</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Amiri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: {
+              850: '#043d2e',
+              900: '#064e3b',
+              950: '#022c22',
+            },
+            amber: {
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            arabic: ['Amiri', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- SVG Liquid Refraction Filters -->
+  <svg class="hidden" aria-hidden="true">
+    <defs>
+      <filter id="liquid-refract" x="-10%" y="-10%" width="120%" height="120%" filterUnits="objectBoundingBox">
+        <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+  <style>
+    /* Animated Fluid Geometric Pattern Overlay Background */
+    .bg-islamic-pattern {
+      background-color: #043d2e;
+      background-image: radial-gradient(#fbbf24 0.75px, transparent 0.75px), radial-gradient(#fbbf24 0.75px, #064e3b 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+    
+    .pattern-overlay {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d97706' fill-opacity='0.08' fill-rule='evenodd'%3E%3Cpath d='M30 30L15 0h30L30 30zM0 30l30 15v-30L0 30zm60 0L30 15v30l30-15zM30 30l15 30H15l15-30z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Ambient Liquid Orb Morphing Animation */
+    @keyframes orbMorph {
+      0%, 100% { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; transform: translate(0, 0) scale(1) rotate(0deg); }
+      33% { border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%; transform: translate(30px, -40px) scale(1.1) rotate(120deg); }
+      66% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; transform: translate(-20px, 20px) scale(0.95) rotate(240deg); }
+    }
+
+    .liquid-orb-1 {
+      animation: orbMorph 18s ease-in-out infinite alternate;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.35) 0%, rgba(6, 78, 59, 0) 70%);
+      filter: blur(40px);
+    }
+    
+    .liquid-orb-2 {
+      animation: orbMorph 22s ease-in-out infinite alternate-reverse;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, rgba(2, 44, 34, 0) 70%);
+      filter: blur(50px);
+    }
+
+    /* Ultra Liquid Glassmorphism Styling */
+    .liquid-glass {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.6), inset 0 -1px 2px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .liquid-glass:hover {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(251, 191, 36, 0.5);
+      box-shadow: 0 30px 60px rgba(6, 78, 59, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      transform: translateY(-6px) scale(1.01);
+    }
+
+    .liquid-glass-dark {
+      background: rgba(4, 61, 46, 0.7);
+      backdrop-filter: blur(20px) saturate(190%);
+      -webkit-backdrop-filter: blur(20px) saturate(190%);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      box-shadow: 0 30px 60px rgba(2, 44, 34, 0.5), inset 0 1px 1px rgba(251, 191, 36, 0.3);
+    }
+
+    /* Liquid Ripple Button Effect */
+    .liquid-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .liquid-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.4) 0%, transparent 60%);
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.6s ease-out;
+      pointer-events: none;
+    }
+
+    .liquid-btn:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Motion Scroll Reveal Base */
+    .motion-reveal {
+      opacity: 0;
+      transform: translateY(35px) scale(0.98);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .motion-reveal.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #022c22;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #f59e0b, #d97706);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #fbbf24;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-amber-500 selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+
+  <!-- STICKY LIQUID HEADER -->
+  <header class="sticky top-0 z-40 w-full bg-emerald-950/70 backdrop-blur-xl border-b border-amber-500/20 shadow-2xl transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo / Identity -->
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 via-amber-400 to-amber-200 p-0.5 shadow-lg shadow-amber-500/20 flex items-center justify-center transform hover:rotate-12 transition-transform duration-500">
+          <div class="w-full h-full bg-emerald-950 rounded-full flex items-center justify-center text-amber-400">
+            <i class="fa-solid font-arabic text-2xl">م</i>
+          </div>
+        </div>
+        <div>
+          <h1 id="header-title" class="text-lg sm:text-xl font-bold text-white tracking-wide uppercase">MADARIJUL ULOOM MADRASA</h1>
+          <p id="header-location" class="text-xs text-amber-400 font-medium tracking-wider flex items-center gap-1">
+            <i class="fa-solid fa-location-dot text-[10px]"></i> Pattiyil Paramba
+          </p>
+        </div>
+      </div>
+
+      <!-- Header Action Buttons -->
+      <div class="flex items-center space-x-4">
+        <a href="#grievance" class="hidden md:inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-300 hover:text-white transition-colors">
+          <i class="fa-solid fa-paper-plane"></i> Contact & Grievance
+        </a>
+        <button onclick="toggleAdminModal(true)" class="liquid-btn relative group overflow-hidden rounded-full p-px font-semibold text-xs uppercase tracking-wider focus:outline-none shadow-lg shadow-amber-500/10">
+          <span class="absolute inset-0 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 rounded-full group-hover:opacity-90 transition-opacity"></span>
+          <span class="relative block px-5 py-2.5 rounded-full bg-emerald-950 text-amber-300 group-hover:bg-transparent group-hover:text-emerald-950 transition-all font-bold flex items-center gap-2">
+            <i class="fa-solid fa-user-shield"></i> Admin Portal
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN PUBLIC CONTENT -->
+  <main class="flex-grow">
+    <!-- HERO SECTION WITH LIQUID ORBS -->
+    <section class="relative bg-emerald-950 text-white overflow-hidden py-20 lg:py-32 pattern-overlay">
+      <!-- Dynamic Animated Ambient Orbs -->
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 liquid-orb-1 opacity-60 pointer-events-none"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 liquid-orb-2 opacity-50 pointer-events-none"></div>
+      
+      <div class="absolute inset-0 bg-gradient-to-b from-emerald-950/60 via-transparent to-emerald-950"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center motion-reveal">
+        
+        <div class="inline-block mb-6 px-6 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 backdrop-blur-md shadow-inner">
+          <span class="text-amber-300 font-arabic text-xl tracking-widest">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
+        </div>
+
+        <h1 id="hero-title" class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-300 to-amber-400 mb-6 tracking-tight drop-shadow-sm">
+          MADARIJUL ULOOM MADRASA
+        </h1>
+        <p id="hero-subtitle" class="text-lg sm:text-2xl text-emerald-100 max-w-3xl mx-auto font-light mb-10 leading-relaxed">
+          Nurturing faith, knowledge, and moral excellence at Pattyil Paramba.
+        </p>
+
+        <!-- Quick Info Badges -->
+        <div class="flex flex-wrap justify-center gap-4 text-xs font-medium text-emerald-200">
+          <span class="px-4 py-2 rounded-xl bg-emerald-900/40 border border-emerald-700/50 backdrop-blur-md flex items-center gap-2 shadow-sm">
+            <i class="fa-solid fa-book-quran text-amber-400"></i> Authentic Islamic Curriculum
+          </span>
+          <span class="px-4 py-2 rounded-xl bg-emerald-900/40 border border-emerald-700/50 backdrop-blur-md flex items-center gap-2 shadow-sm">
+            <i class="fa-solid fa-graduation-cap text-amber-400"></i> Qualified Educators
+          </span>
+          <span class="px-4 py-2 rounded-xl bg-emerald-900/40 border border-emerald-700/50 backdrop-blur-md flex items-center gap-2 shadow-sm">
+            <i class="fa-solid fa-mosque text-amber-400"></i> Moral Environment
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL-TIME STATS GRID WITH TILT & LIQUID GLASS -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="liquid-glass rounded-3xl p-8 border-l-4 border-l-amber-500 motion-reveal transform hover:-translate-y-2 transition-all">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest font-bold text-slate-500">Total Enrolled</p>
+              <h3 id="stat-total" class="text-4xl font-extrabold text-emerald-950 mt-2">0</h3>
+              <p class="text-xs text-slate-400 mt-1">Active Students</p>
+            </div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-amber-300/30 border border-amber-400/40 backdrop-blur-md flex items-center justify-center text-amber-600 text-3xl shadow-inner">
+              <i class="fa-solid fa-users"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="liquid-glass rounded-3xl p-8 border-l-4 border-l-emerald-600 motion-reveal transform hover:-translate-y-2 transition-all">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest font-bold text-slate-500">Boys Count</p>
+              <h3 id="stat-boys" class="text-4xl font-extrabold text-emerald-950 mt-2">0</h3>
+              <p class="text-xs text-slate-400 mt-1">Students</p>
+            </div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-600/20 to-emerald-400/30 border border-emerald-500/40 backdrop-blur-md flex items-center justify-center text-emerald-700 text-3xl shadow-inner">
+              <i class="fa-solid fa-child-reaching"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="liquid-glass rounded-3xl p-8 border-l-4 border-l-amber-400 motion-reveal transform hover:-translate-y-2 transition-all">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest font-bold text-slate-500">Girls Count</p>
+              <h3 id="stat-girls" class="text-4xl font-extrabold text-emerald-950 mt-2">0</h3>
+              <p class="text-xs text-slate-400 mt-1">Students</p>
+            </div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-400/20 to-amber-200/30 border border-amber-300/40 backdrop-blur-md flex items-center justify-center text-amber-500 text-3xl shadow-inner">
+              <i class="fa-solid fa-child-dress"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- USTHADS DIRECTORY -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center mb-16 motion-reveal">
+        <span class="text-amber-600 font-semibold text-xs uppercase tracking-widest bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20">Our Educators</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-950 mt-3">Honorable Usthads Directory</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div id="usthads-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Dynamic Injection -->
+      </div>
+    </section>
+
+    <!-- CATEGORIZED MEDIA GALLERY -->
+    <section class="bg-slate-100/70 py-20 border-y border-slate-200/60 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 motion-reveal">
+          <span class="text-amber-600 font-semibold text-xs uppercase tracking-widest bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20">Memories & Events</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-emerald-950 mt-3">Madrasa Photo Gallery</h2>
+          <div class="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div id="gallery-tabs" class="flex flex-wrap justify-center gap-3 mb-12 motion-reveal">
+          <!-- Dynamic Filter Buttons -->
+        </div>
+
+        <!-- Photo Grid -->
+        <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Dynamic Images -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO HUB SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="text-center mb-16 motion-reveal">
+        <span class="text-amber-600 font-semibold text-xs uppercase tracking-widest bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20">Watch & Listen</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-emerald-950 mt-3">Madrasa Video Hub</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div id="video-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Dynamic Video Cards -->
+      </div>
+    </section>
+
+    <!-- PUBLIC GRIEVANCE PORTAL WITH LIQUID GLASS DARK -->
+    <section id="grievance" class="bg-emerald-950 text-white py-24 relative overflow-hidden pattern-overlay">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] liquid-orb-1 opacity-30 pointer-events-none"></div>
+
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 motion-reveal">
+        <div class="text-center mb-12">
+          <span class="text-amber-400 font-semibold text-xs uppercase tracking-widest bg-amber-500/10 px-4 py-1.5 rounded-full border border-amber-500/20">Feedback & Support</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mt-3">Public Grievance Portal</h2>
+          <p class="text-slate-300 text-sm mt-3">Submit your feedback, queries, or complaints directly to the administration securely.</p>
+        </div>
+
+        <form id="grievance-form" onsubmit="handleGrievanceSubmit(event)" class="liquid-glass-dark p-8 sm:p-10 rounded-3xl space-y-6">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">Full Name</label>
+            <input type="text" id="g-name" required placeholder="Your Name" class="w-full bg-emerald-900/50 border border-emerald-700/60 rounded-xl px-4 py-3.5 text-white placeholder-emerald-300/40 focus:outline-none focus:border-amber-400 text-sm backdrop-blur-md transition-all">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">Contact Number</label>
+            <input type="tel" id="g-phone" required placeholder="Phone / Mobile Number" class="w-full bg-emerald-900/50 border border-emerald-700/60 rounded-xl px-4 py-3.5 text-white placeholder-emerald-300/40 focus:outline-none focus:border-amber-400 text-sm backdrop-blur-md transition-all">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-amber-300 mb-2">Grievance Details</label>
+            <textarea id="g-details" rows="4" required placeholder="Type your message or complaint here..." class="w-full bg-emerald-900/50 border border-emerald-700/60 rounded-xl px-4 py-3.5 text-white placeholder-emerald-300/40 focus:outline-none focus:border-amber-400 text-sm backdrop-blur-md transition-all"></textarea>
+          </div>
+          <button type="submit" class="liquid-btn w-full py-4 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-emerald-950 font-bold rounded-xl shadow-xl hover:shadow-amber-500/20 text-sm uppercase tracking-wider">
+            Submit Grievance
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-emerald-950 border-t border-emerald-900/80 text-slate-400 py-8 text-xs text-center relative z-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="font-medium text-emerald-200/80" id="footer-text">© 2026 MADARIJUL ULOOM MADRASA - Pattyil Paramba. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX VIDEO PLAYER MODAL -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden bg-emerald-950/80 backdrop-blur-2xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+    <div class="relative w-full max-w-4xl bg-black rounded-3xl overflow-hidden shadow-2xl border border-amber-500/30 transform scale-95 transition-transform duration-300">
+      <button onclick="closeVideoModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-amber-500 text-emerald-950 flex items-center justify-center hover:bg-amber-400 transition-colors shadow-lg">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+      <div class="aspect-video w-full">
+        <iframe id="video-iframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN LOGIN MODAL -->
+  <div id="admin-modal" class="fixed inset-0 z-50 hidden bg-emerald-950/80 backdrop-blur-2xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+    <div class="w-full max-w-md liquid-glass rounded-3xl p-8 shadow-2xl border border-amber-500/30 relative transform scale-95 transition-transform duration-300">
+      <button onclick="toggleAdminModal(false)" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+      
+      <div class="text-center mb-6">
+        <div class="w-14 h-14 bg-amber-500 text-emerald-950 rounded-2xl flex items-center justify-center mx-auto mb-3 text-2xl font-bold shadow-lg shadow-amber-500/20">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h3 class="text-xl font-bold text-emerald-950">Admin Authentication</h3>
+        <p class="text-xs text-slate-500 mt-1">Please enter credentials to unlock dashboard.</p>
+      </div>
+
+      <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Username</label>
+          <input type="text" id="admin-user" required class="w-full bg-white/70 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-amber-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Password</label>
+          <input type="password" id="admin-pass" required class="w-full bg-white/70 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-amber-500">
+        </div>
+        <button type="submit" class="liquid-btn w-full py-3 bg-emerald-900 hover:bg-emerald-800 text-amber-400 font-bold rounded-xl shadow-lg transition-all text-sm uppercase tracking-wider">
+          Authenticate & Unlock
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SLIDE-OUT ADMIN DASHBOARD SIDEBAR CONTAINER -->
+  <div id="admin-dashboard" class="fixed inset-y-0 right-0 z-50 w-full max-w-2xl bg-emerald-950/90 text-white backdrop-blur-3xl border-l border-amber-500/30 shadow-2xl transform translate-x-full transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) flex flex-col">
+    <!-- Dashboard Header -->
+    <div class="p-6 border-b border-emerald-800/80 flex items-center justify-between bg-emerald-900/40">
+      <div class="flex items-center space-x-3">
+        <i class="fa-solid fa-sliders text-amber-400 text-xl"></i>
+        <div>
+          <h2 class="text-lg font-bold text-amber-400">Admin Control Node</h2>
+          <p class="text-xs text-emerald-300">Live Synchronized Front-End Management</p>
+        </div>
+      </div>
+      <button onclick="closeAdminDashboard()" class="w-9 h-9 rounded-full bg-emerald-800/80 hover:bg-emerald-700 text-amber-400 flex items-center justify-center transition-colors">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="flex border-b border-emerald-800/80 bg-emerald-950/60 text-xs uppercase tracking-wider font-bold overflow-x-auto">
+      <button onclick="switchAdminTab('general')" id="tab-btn-general" class="px-5 py-3.5 border-b-2 border-amber-400 text-amber-400 flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-gear"></i> General
+      </button>
+      <button onclick="switchAdminTab('usthads')" id="tab-btn-usthads" class="px-5 py-3.5 border-b-2 border-transparent text-emerald-300 hover:text-white flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-user-graduate"></i> Usthads
+      </button>
+      <button onclick="switchAdminTab('gallery')" id="tab-btn-gallery" class="px-5 py-3.5 border-b-2 border-transparent text-emerald-300 hover:text-white flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-images"></i> Gallery
+      </button>
+      <button onclick="switchAdminTab('videos')" id="tab-btn-videos" class="px-5 py-3.5 border-b-2 border-transparent text-emerald-300 hover:text-white flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-video"></i> Videos
+      </button>
+      <button onclick="switchAdminTab('grievances')" id="tab-btn-grievances" class="px-5 py-3.5 border-b-2 border-transparent text-emerald-300 hover:text-white flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-envelope-open-text"></i> Complaints
+      </button>
+    </div>
+
+    <!-- Dashboard Content Body -->
+    <div class="flex-grow overflow-y-auto p-6 space-y-8">
+      
+      <!-- TAB 1: GENERAL INFO -->
+      <div id="tab-general" class="space-y-6">
+        <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider border-b border-emerald-800 pb-2">Madrasa Branding & Statistics</h3>
+        
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-emerald-200 mb-1">Madrasa Name</label>
+            <input type="text" id="edit-m-name" class="w-full bg-emerald-900/60 border border-emerald-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-emerald-200 mb-1">Location / Subtitle</label>
+            <input type="text" id="edit-m-location" class="w-full bg-emerald-900/60 border border-emerald-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400">
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-emerald-200 mb-1">Boys Headcount</label>
+              <input type="number" id="edit-m-boys" class="w-full bg-emerald-900/60 border border-emerald-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-emerald-200 mb-1">Girls Headcount</label>
+              <input type="number" id="edit-m-girls" class="w-full bg-emerald-900/60 border border-emerald-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400">
+            </div>
+          </div>
+
+          <button onclick="saveGeneralSettings()" class="liquid-btn w-full py-3 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl text-xs uppercase tracking-wider transition-all shadow-md">
+            Save General Changes
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 2: USTHADS MANAGEMENT -->
+      <div id="tab-usthads" class="hidden space-y-6">
+        <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider border-b border-emerald-800 pb-2">Modify 6 Honorable Usthads</h3>
+        <div id="admin-usthads-list" class="space-y-4">
+          <!-- Dynamic Usthads Inputs -->
+        </div>
+      </div>
+
+      <!-- TAB 3: GALLERY MANAGEMENT -->
+      <div id="tab-gallery" class="hidden space-y-6">
+        <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider border-b border-emerald-800 pb-2">Add New Gallery Photo</h3>
+        <form onsubmit="addGalleryImage(event)" class="space-y-4 bg-emerald-900/40 p-5 rounded-2xl border border-emerald-800">
+          <div>
+            <label class="block text-xs font-semibold text-emerald-200 mb-1">Category Tag</label>
+            <input type="text" id="gal-cat" placeholder="e.g. General, Arts Fest, Inauguration" required class="w-full bg-emerald-900/60 border border-emerald-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-amber-400">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-emerald-200 mb-1">Description</label>
+            <input type="text" id="gal-desc" placeholder="Brief Photo Description" required class="w-full bg-emerald-900/60 border border-emerald-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-amber-400">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-emerald-200 mb-1">Select Image File</label>
+            <input type="file" id="gal-file" accept="image/*" required class="w-full text-xs text-slate-300 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-amber-500 file:text-emerald-950 hover:file:bg-amber-400">
+          </div>
+          <button type="submit" class="liquid-btn w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl text-xs uppercase tracking-wider">
+            Upload & Add Photo
+          </button>
+        </form>
+
+        <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider border-b border-emerald-800 pb-2 pt-4">Existing Photos</h3>
+        <div id="admin-gallery-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Dynamic Gallery Items Admin -->
+        </div>
+      </div>
+
+      <!-- TAB 4: VIDEOS MANAGEMENT -->
+      <div id="tab-videos" class="hidden space-y-6">
+        <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider border-b border-emerald-800 pb-2">Add New Video Stream</h3>
+        <form onsubmit="addVideoNode(event)" class="space-y-4 bg-emerald-900/40 p-5 rounded-2xl border border-emerald-800">
+          <div>
+            <label class="block text-xs font-semibold text-emerald-200 mb-1">Video Title</label>
+            <input type="text" id="vid-title" placeholder="e.g. Annual Day Program 2026" required class="w-full bg-emerald-900/60 border border-emerald-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-amber-400">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-emerald-200 mb-1">YouTube / Embed Video URL</label>
+            <input type="url" id="vid-url" placeholder="https://www.youtube.com/embed/..." required class="w-full bg-emerald-900/60 border border-emerald-700 rounded-xl px-3.5 py-2 text-sm text-white focus:outline-none focus:border-amber-400">
+          </div>
+          <button type="submit" class="liquid-btn w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-emerald-950 font-bold rounded-xl text-xs uppercase tracking-wider">
+            Add Video Stream
+          </button>
+        </form>
+
+        <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider border-b border-emerald-800 pb-2 pt-4">Existing Streams</h3>
+        <div id="admin-videos-list" class="space-y-3">
+          <!-- Dynamic Video Items Admin -->
+        </div>
+      </div>
+
+      <!-- TAB 5: GRIEVANCES LOG -->
+      <div id="tab-grievances" class="hidden space-y-6">
+        <div class="flex items-center justify-between border-b border-emerald-800 pb-2">
+          <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider">Submitted Grievances Log</h3>
+          <button onclick="purgeGrievances()" class="px-3 py-1 bg-red-600/80 hover:bg-red-600 text-white font-bold rounded-lg text-xs transition-colors">
+            <i class="fa-solid fa-trash"></i> Clear All Logs
+          </button>
+        </div>
+        <div id="admin-grievance-list" class="space-y-4">
+          <!-- Dynamic Grievances Log -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC WITH INTERSECTION OBSERVER & TILT EFFECTS -->
+  <script>
+    // INITIAL MOCK DATA ARRAYS
+    const DEFAULT_DATA = {
+      general: {
+        name: "MADARIJUL ULOOM MADRASA",
+        location: "Pattyil Paramba",
+        boysCount: 145,
+        girlsCount: 130
+      },
+      usthads: [
+        { name: "Usthad Ahmad Musliyar", class: "Class 10 - Quran & Hadith", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" },
+        { name: "Usthad Aboobacker Siddique", class: "Class 9 - Fiqh & Aqeeda", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" },
+        { name: "Usthad Muhammad Ibrahim", class: "Class 8 - Arabic Literature", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" },
+        { name: "Usthad Hasan Al-Noori", class: "Class 7 - Islamic History", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" },
+        { name: "Usthad Umar Mukhtar", class: "Class 6 - Tajweed & Hifz", photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" },
+        { name: "Usthad Bilal Raza", class: "Class 5 - Primary Ethics", photo: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80" }
+      ],
+      gallery: [
+        { id: 1, category: "Inauguration", desc: "Annual Madrasa Reopening Ceremony", photo: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=600&q=80" },
+        { id: 2, category: "Arts Fest", desc: "Islamic Cultural Fest Recitation Competition", photo: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80" },
+        { id: 3, category: "General", desc: "Morning Assembly and Ethics Session", photo: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" }
+      ],
+      videos: [
+        { id: 1, title: "Milad-un-Nabi Celebration Address", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
+        { id: 2, title: "Students Quran Recitation Highlights", url: "https://www.youtube.com/embed/dQw4w9WgXcQ" }
+      ],
+      grievances: []
+    };
+
+    // LOCALSTORAGE STATE MANAGEMENT
+    function loadState() {
+      const stored = localStorage.getItem('madrasa_db');
+      if (stored) {
+        try { return JSON.parse(stored); } catch (e) { return DEFAULT_DATA; }
+      }
+      return DEFAULT_DATA;
+    }
+
+    function saveState() {
+      localStorage.setItem('madrasa_db', JSON.stringify(appState));
+      renderAll();
+    }
+
+    let appState = loadState();
+    let currentGalleryFilter = 'All';
+
+    // RENDER FUNCTIONS
+    function renderAll() {
+      renderGeneralInfo();
+      renderUsthads();
+      renderGallery();
+      renderVideos();
+      renderGrievances();
+      initScrollReveal();
+      init3DTiltEffect();
+    }
+
+    function renderGeneralInfo() {
+      const g = appState.general;
+      document.getElementById('header-title').innerText = g.name;
+      document.getElementById('header-location').innerHTML = `<i class="fa-solid fa-location-dot text-[10px]"></i> ${g.location}`;
+      document.getElementById('hero-title').innerText = g.name;
+      document.getElementById('hero-subtitle').innerText = `Nurturing faith, knowledge, and moral excellence at ${g.location}.`;
+      document.getElementById('footer-text').innerText = `© 2026 ${g.name} - ${g.location}. All Rights Reserved.`;
+
+      document.getElementById('stat-boys').innerText = g.boysCount;
+      document.getElementById('stat-girls').innerText = g.girlsCount;
+      document.getElementById('stat-total').innerText = parseInt(g.boysCount) + parseInt(g.girlsCount);
+
+      // Populate Admin General Inputs
+      document.getElementById('edit-m-name').value = g.name;
+      document.getElementById('edit-m-location').value = g.location;
+      document.getElementById('edit-m-boys').value = g.boysCount;
+      document.getElementById('edit-m-girls').value = g.girlsCount;
+    }
+
+    function renderUsthads() {
+      const grid = document.getElementById('usthads-grid');
+      const adminList = document.getElementById('admin-usthads-list');
+      
+      grid.innerHTML = '';
+      adminList.innerHTML = '';
+
+      appState.usthads.forEach((usthad, idx) => {
+        // Public Card with Liquid Glass Effect
+        grid.innerHTML += `
+          <div class="liquid-glass rounded-3xl overflow-hidden shadow-xl border border-white/60 group motion-reveal tilt-card">
+            <div class="h-64 overflow-hidden relative">
+              <img src="${usthad.photo}" alt="${usthad.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="p-6 relative">
+              <h3 class="font-bold text-lg text-emerald-950">${usthad.name}</h3>
+              <p class="text-xs font-semibold text-amber-600 uppercase tracking-wider mt-1">${usthad.class}</p>
+            </div>
+          </div>
+        `;
+
+        // Admin Edit Node
+        adminList.innerHTML += `
+          <div class="bg-emerald-900/40 p-4 rounded-2xl border border-emerald-800 space-y-3">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Usthad #${idx + 1}</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-[10px] text-emerald-300 uppercase">Name</label>
+                <input type="text" value="${usthad.name}" onchange="updateUsthad(${idx}, 'name', this.value)" class="w-full bg-emerald-950 border border-emerald-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+              </div>
+              <div>
+                <label class="block text-[10px] text-emerald-300 uppercase">Class Assigned</label>
+                <input type="text" value="${usthad.class}" onchange="updateUsthad(${idx}, 'class', this.value)" class="w-full bg-emerald-950 border border-emerald-700 rounded-lg px-2.5 py-1.5 text-xs text-white">
+              </div>
+            </div>
+            <div>
+              <label class="block text-[10px] text-emerald-300 uppercase">Replace Photo</label>
+              <input type="file" accept="image/*" onchange="uploadUsthadPhoto(${idx}, event)" class="w-full text-xs text-slate-300 file:mr-2 file:py-1 file:px-3 file:rounded-lg file:border-0 file:text-[10px] file:bg-amber-500 file:text-emerald-950">
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function updateUsthad(idx, field, value) {
+      appState.usthads[idx][field] = value;
+      saveState();
+    }
+
+    function uploadUsthadPhoto(idx, event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          appState.usthads[idx].photo = e.target.result;
+          saveState();
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function renderGallery() {
+      const tabsContainer = document.getElementById('gallery-tabs');
+      const grid = document.getElementById('gallery-grid');
+      const adminList = document.getElementById('admin-gallery-list');
+
+      // Unique Categories
+      const categories = ['All', ...new Set(appState.gallery.map(item => item.category))];
+      
+      // Render Filter Buttons
+      tabsContainer.innerHTML = categories.map(cat => `
+        <button onclick="filterGallery('${cat}')" class="liquid-btn px-5 py-2.5 rounded-full text-xs font-bold transition-all ${currentGalleryFilter === cat ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-emerald-950 shadow-lg shadow-amber-500/20 scale-105' : 'bg-white/80 text-slate-600 hover:bg-white'}">
+          ${cat}
+        </button>
+      `).join('');
+
+      // Filtered Public Grid
+      const filtered = currentGalleryFilter === 'All' 
+        ? appState.gallery 
+        : appState.gallery.filter(item => item.category === currentGalleryFilter);
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="liquid-glass rounded-3xl overflow-hidden shadow-lg border border-white/60 group motion-reveal">
+          <div class="h-56 overflow-hidden relative">
+            <img src="${item.photo}" alt="${item.desc}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <span class="absolute top-4 left-4 bg-emerald-950/80 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-md border border-amber-500/20 uppercase tracking-wider">
+              ${item.category}
+            </span>
+          </div>
+          <div class="p-5">
+            <p class="text-sm font-semibold text-slate-800">${item.desc}</p>
+          </div>
+        </div>
+      `).join('');
+
+      // Admin Items
+      adminList.innerHTML = appState.gallery.map((item, idx) => `
+        <div class="bg-emerald-900/40 p-3 rounded-2xl border border-emerald-800 flex items-center justify-between gap-3">
+          <img src="${item.photo}" class="w-12 h-12 rounded-xl object-cover">
+          <div class="flex-grow min-w-0">
+            <p class="text-xs font-bold text-amber-400 truncate">${item.category}</p>
+            <p class="text-[10px] text-slate-300 truncate">${item.desc}</p>
+          </div>
+          <button onclick="deleteGalleryItem(${idx})" class="text-red-400 hover:text-red-300 text-sm p-1.5">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function filterGallery(cat) {
+      currentGalleryFilter = cat;
+      renderGallery();
+      initScrollReveal();
+    }
+
+    function addGalleryImage(e) {
+      e.preventDefault();
+      const cat = document.getElementById('gal-cat').value;
+      const desc = document.getElementById('gal-desc').value;
+      const fileInput = document.getElementById('gal-file');
+
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          appState.gallery.unshift({
+            id: Date.now(),
+            category: cat,
+            desc: desc,
+            photo: event.target.result
+          });
+          saveState();
+          document.getElementById('gal-cat').value = '';
+          document.getElementById('gal-desc').value = '';
+          fileInput.value = '';
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+      }
+    }
+
+    function deleteGalleryItem(idx) {
+      appState.gallery.splice(idx, 1);
+      saveState();
+    }
+
+    function renderVideos() {
+      const grid = document.getElementById('video-grid');
+      const adminList = document.getElementById('admin-videos-list');
+
+      grid.innerHTML = appState.videos.map(vid => `
+        <div class="liquid-glass rounded-3xl overflow-hidden shadow-lg border border-white/60 group motion-reveal">
+          <div class="relative h-52 bg-emerald-950 flex items-center justify-center cursor-pointer overflow-hidden" onclick="playVideo('${vid.url}')">
+            <div class="absolute inset-0 bg-emerald-900/40 group-hover:bg-emerald-900/20 transition-colors duration-500"></div>
+            <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-amber-500 to-amber-300 text-emerald-950 flex items-center justify-center text-2xl shadow-2xl z-10 group-hover:scale-115 transition-transform duration-300">
+              <i class="fa-solid fa-play ml-1"></i>
+            </div>
+            <span class="absolute bottom-4 left-4 text-[10px] font-bold text-amber-300 uppercase tracking-widest z-10 bg-emerald-950/70 px-3 py-1 rounded-full backdrop-blur-md border border-amber-500/20">Click to Play Video</span>
+          </div>
+          <div class="p-5">
+            <h4 class="font-bold text-slate-800 text-sm">${vid.title}</h4>
+          </div>
+        </div>
+      `).join('');
+
+      adminList.innerHTML = appState.videos.map((vid, idx) => `
+        <div class="bg-emerald-900/40 p-3 rounded-2xl border border-emerald-800 flex items-center justify-between gap-3">
+          <div class="min-w-0">
+            <p class="text-xs font-bold text-amber-400 truncate">${vid.title}</p>
+            <p class="text-[10px] text-slate-400 truncate">${vid.url}</p>
+          </div>
+          <button onclick="deleteVideoItem(${idx})" class="text-red-400 hover:text-red-300 text-sm p-1.5">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function addVideoNode(e) {
+      e.preventDefault();
+      const title = document.getElementById('vid-title').value;
+      let url = document.getElementById('vid-url').value;
+
+      // Ensure proper embed URL format for YouTube links
+      if (url.includes('watch?v=')) {
+        url = url.replace('watch?v=', 'embed/');
+      } else if (url.includes('youtu.be/')) {
+        url = url.replace('youtu.be/', 'www.youtube.com/embed/');
+      }
+
+      appState.videos.unshift({
+        id: Date.now(),
+        title: title,
+        url: url
+      });
+      saveState();
+      document.getElementById('vid-title').value = '';
+      document.getElementById('vid-url').value = '';
+    }
+
+    function deleteVideoItem(idx) {
+      appState.videos.splice(idx, 1);
+      saveState();
+    }
+
+    function playVideo(url) {
+      const modal = document.getElementById('video-modal');
+      const iframe = document.getElementById('video-iframe');
+      iframe.src = url + "?autoplay=1";
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.querySelector('.transform').classList.remove('scale-95');
+      }, 10);
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      const iframe = document.getElementById('video-iframe');
+      modal.classList.add('opacity-0');
+      modal.querySelector('.transform').classList.add('scale-95');
+      setTimeout(() => {
+        iframe.src = "";
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    // GRIEVANCE HANDLERS
+    function handleGrievanceSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('g-name').value;
+      const phone = document.getElementById('g-phone').value;
+      const details = document.getElementById('g-details').value;
+
+      appState.grievances.unshift({
+        id: Date.now(),
+        name,
+        phone,
+        details,
+        timestamp: new Date().toLocaleString()
+      });
+
+      saveState();
+      alert("Your grievance/feedback has been securely submitted to the administration.");
+      document.getElementById('grievance-form').reset();
+    }
+
+    function renderGrievances() {
+      const list = document.getElementById('admin-grievance-list');
+      if (appState.grievances.length === 0) {
+        list.innerHTML = `<p class="text-xs text-slate-400 italic">No grievances logged yet.</p>`;
+        return;
+      }
+
+      list.innerHTML = appState.grievances.map(g => `
+        <div class="bg-emerald-900/40 p-4 rounded-2xl border border-emerald-800 space-y-2">
+          <div class="flex items-center justify-between border-b border-emerald-800/60 pb-2">
+            <span class="text-xs font-bold text-amber-400">${g.name} (${g.phone})</span>
+            <span class="text-[10px] text-slate-400">${g.timestamp}</span>
+          </div>
+          <p class="text-xs text-slate-200">${g.details}</p>
+        </div>
+      `).join('');
+    }
+
+    function purgeGrievances() {
+      if (confirm("Are you sure you want to clear all submitted grievance logs?")) {
+        appState.grievances = [];
+        saveState();
+      }
+    }
+
+    // GENERAL SETTINGS SAVE
+    function saveGeneralSettings() {
+      appState.general.name = document.getElementById('edit-m-name').value;
+      appState.general.location = document.getElementById('edit-m-location').value;
+      appState.general.boysCount = parseInt(document.getElementById('edit-m-boys').value) || 0;
+      appState.general.girlsCount = parseInt(document.getElementById('edit-m-girls').value) || 0;
+      saveState();
+      alert("General settings successfully updated!");
+    }
+
+    // ADMIN AUTHENTICATION & MODAL CONTROLS
+    function toggleAdminModal(show) {
+      const modal = document.getElementById('admin-modal');
+      if (show) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          modal.querySelector('.transform').classList.remove('scale-95');
+        }, 10);
+      } else {
+        modal.classList.add('opacity-0');
+        modal.querySelector('.transform').classList.add('scale-95');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    function handleAdminLogin(e) {
+      e.preventDefault();
+      const user = document.getElementById('admin-user').value;
+      const pass = document.getElementById('admin-pass').value;
+
+      if (user === 'admin' && pass === 'admin123') {
+        toggleAdminModal(false);
+        openAdminDashboard();
+        document.getElementById('admin-user').value = '';
+        document.getElementById('admin-pass').value = '';
+      } else {
+        alert("Invalid Admin Credentials!");
+      }
+    }
+
+    function openAdminDashboard() {
+      document.getElementById('admin-dashboard').classList.remove('translate-x-full');
+    }
+
+    function closeAdminDashboard() {
+      document.getElementById('admin-dashboard').classList.add('translate-x-full');
+    }
+
+    function switchAdminTab(tabName) {
+      const tabs = ['general', 'usthads', 'gallery', 'videos', 'grievances'];
+      tabs.forEach(t => {
+        document.getElementById(`tab-${t}`).classList.add('hidden');
+        const btn = document.getElementById(`tab-btn-${t}`);
+        btn.classList.remove('border-amber-400', 'text-amber-400');
+        btn.classList.add('border-transparent', 'text-emerald-300');
+      });
+
+      document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+      const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+      activeBtn.classList.remove('border-transparent', 'text-emerald-300');
+      activeBtn.classList.add('border-amber-400', 'text-amber-400');
+    }
+
+    // INTERSECTION OBSERVER FOR MOTION REVEALS
+    function initScrollReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.motion-reveal').forEach(el => observer.observe(el));
+    }
+
+    // 3D LIQUID TILT MOTION EFFECT FOR CARDS
+    function init3DTiltEffect() {
+      document.querySelectorAll('.tilt-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = (y - centerY) / 15;
+          const rotateY = (centerX - x) / 15;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px) scale(1.01)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0deg) scale(1)`;
+        });
+      });
+    }
+
+    // INITIALIZATION ON LOAD
+    document.addEventListener('DOMContentLoaded', () => {
+      renderAll();
+    });
+  </script>
+</body>
+</html>
